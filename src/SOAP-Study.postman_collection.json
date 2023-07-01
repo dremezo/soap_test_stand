@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "a23c2f6e-a14c-4931-a82b-11bf9b455a58",
+		"name": "SOAP-Study",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20016644"
+	},
+	"item": [
+		{
+			"name": "create-data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:gs=\"http://www.technokratos.com/soap\">\n<soap:Header>\n<security xmlns=\"http://www.technokratos.com/soap/security\">\n<token>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJoYXJkY29kZWQiLCJuYW1lIjoiQmxhY2sgSmFjayIsImlhdCI6MTUxNjIzOTAyMn0.nXbwCfwo3TNu7WZozrwzEwM5p-6uFjADaGhJ5HeJUa8</token>\n</security>\n</soap:Header>\n    <soap:Body>\n        <gs:createDataRequest>\n            <gs:request>hardcoded</gs:request>\n        </gs:createDataRequest>\n    </soap:Body>\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basePort}}/ws",
+					"host": [
+						"{{basePort}}"
+					],
+					"path": [
+						"ws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:gs=\"http://www.technokratos.com/soap\">\n<soap:Header>\n<security xmlns=\"http://www.technokratos.com/soap/security\">\n<token>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODlkZGRzczAiLCJuYW1lIjoiQmxhY2sgSmFjayIsImlhdCI6MTUxNjIzOTAyMn0.VUL65iKS9ggbhZrrrUKp8l3_bvGosHjwaj4v7v65s0o</token>\n</security>\n</soap:Header>\n    <soap:Body>\n        <gs:createDataRequest>\n            <gs:request>Spain</gs:request>\n        </gs:createDataRequest>\n    </soap:Body>\n</soap:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basePort}}/ws",
+					"host": [
+						"{{basePort}}"
+					],
+					"path": [
+						"ws"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "basePort",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
